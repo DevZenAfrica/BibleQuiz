@@ -1,5 +1,5 @@
 {
-    "name": "SABI FOOT QUIZ",
+    "name": "BIBLE QUIZ",
     "base": {
         "new_game": "New <br> Game",
         "rank_top_30": "Rank <br> Top 30",
@@ -166,7 +166,7 @@
     },
     "popup": {
         "btn_text": "Clique ici pour démarrer!",
-        "full_text": "To take the big SABI FOOT challenge, send <b class='color-red4-light'>Quiz</b> via WhatsApp to <b class='color-red4-light'>652 49 49 49</b> or click the following button 👇👇.",
-        "full_text_wha": "To open your account to participate in the great SABI FOOT challenge, send <b class='color-red4-light'>Quiz</b> via WhatsApp to <b class='color-red4-light'>652 49 49 49</b> or click the button below 👇👇 and we'll send you a link directly to participate."
+        "full_text": "To take the big BIBLE challenge, send <b class='color-red4-light'>Quiz</b> via WhatsApp to <b class='color-red4-light'>652 49 49 49</b> or click the following button 👇👇.",
+        "full_text_wha": "To open your account to participate in the great BIBLE challenge, send <b class='color-red4-light'>Quiz</b> via WhatsApp to <b class='color-red4-light'>652 49 49 49</b> or click the button below 👇👇 and we'll send you a link directly to participate."
     }
 }

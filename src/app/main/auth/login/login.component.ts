@@ -26,6 +26,13 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import { MatDialog } from "@angular/material/dialog";
 
+declare function getMsisdn(): any;
+declare function getCountry(): any;
+declare function getSelfJidFromUrl(jid: string): any;
+declare function getURLParameter(string): any;
+declare const globalUserName: any;
+declare const avatarUser: any;
+
 declare var $: any;
 
 @Component({
@@ -34,6 +41,13 @@ declare var $: any;
   styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit, AfterViewInit {
+
+  isLoadingFromAyoba = false;
+
+  printDebug='';
+  printError = '';
+  printId = '';
+
   private subscription: Subscription;
   title: string = "components.ask_connect_account";
   private returnUrl: string;
@@ -127,17 +141,65 @@ export class LoginComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    this.windowRef = this._auth.windowRef;
-    this.windowRef.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-      "recaptcha-container",
-      {
-        size: "invisible",
-      }
-    );
+    if (getMsisdn()) {
+      this.isLoadingFromAyoba = true;
+      /*this.printId = globalUserName;
+      this.printDebug = ' -a- ' + getMsisdn().toString();
+      this.printError = ' -b- ' + getSelfJidFromUrl("jid").toString();*/
 
-    this.windowRef.recaptchaVerifier.render();
+      this._auth
+        .login({
+          uid: getMsisdn().toString().replace('+',''),
+          displayName: globalUserName,
+          photoURL: null,
+          email: null,
+          phoneNumber: getMsisdn().toString(),
+          providerId: "phone",
+          ref_parent: localStorage.getItem("key_parain_code")
+        })
+        .subscribe(
+          (data) => {
+            if (data.message) {
+              this._auth.api.toast.success(data.message);
+            }
+            this.returnUrl = '/nouveau-jeu';
+            this.router.navigate([this.returnUrl]).then(
+              () => {
+                this._auth.api.is_loader(false);
+              },
+              () => {
+                this._auth.api.is_loader(false);
+              }
+            );
+            this.loginForm.reset();
+            this.__init();
+            //this.windowRef.confirmationResult = null;
+          },
+          (err) => { this.printError = err;
+            this._auth.api.is_loader(false);
 
-    this.returnUrl = this.route.snapshot.queryParams["returnUrl"] || "/accueil";
+            if (err.error.ask_resend_link && err.error.message) {
+              this._auth.api.toast.info(err.error.message);
+              this.object_login.ask_resend_link = true;
+            } else if (err.error.message) {
+              this._auth.api.toast.error(err.error.message);
+            }
+            console.log(err);
+          }
+        );
+    } else {
+      this.windowRef = this._auth.windowRef;
+      this.windowRef.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+        "recaptcha-container",
+        {
+          size: "invisible",
+        }
+      );
+
+      this.windowRef.recaptchaVerifier.render();
+
+      this.returnUrl = this.route.snapshot.queryParams["returnUrl"] || "/accueil";
+    }
   }
 
   openDialog() {

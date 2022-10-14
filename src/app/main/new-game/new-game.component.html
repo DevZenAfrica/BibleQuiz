@@ -74,7 +74,7 @@
       <ng-container *ngFor="let obj of object.list; let i=index">
         <div class="item clear" *ngIf="object.question_start===i">
           <div class="one-half large-half last-column bottom-10">
-            <h5 class="color-theme font-600 top-10 bottom-20">{{obj.label}}</h5>
+            <h5 class="color-theme font-20 top-10 bottom-20">{{obj.label}}</h5>
             <ng-container *ngFor="let obj_r of obj.responses; let j=index">
               <div class="fac fac-radio fac-green font-20 bottom-10" style="display: block"
                    [ngClass]="{'fac-green': obj_r.good,
@@ -210,7 +210,7 @@
       </h1>
       <ng-container *ngFor="let obj of response.values.questions; let i=index">
         <div class="item" *ngIf="response.back===i">
-          <h5 class="color-theme font-600 top-10 bottom-20">{{obj.label}}</h5>
+          <h5 class="color-theme font-20 top-10 bottom-20">{{obj.label}}</h5>
           <ng-container *ngFor="let obj_r of obj.answers; let j=index">
             <div class="answer_item">
               <span class="status" [ngClass]="{
@@ -255,7 +255,7 @@
 
 <div class="clear"></div>
 <div class="fixed-footer">
-  #GrandQuiz
+  #QuizAfrica
 </div>
 
 <!--<div class="fixed-bottle">

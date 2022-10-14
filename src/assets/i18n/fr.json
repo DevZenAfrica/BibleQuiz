@@ -1,5 +1,5 @@
 {
-    "name": "SABE FOOT QUIZ",
+    "name": "BIBLE QUIZ",
     "base": {
         "new_game": "Nouveau <br> Jeu",
         "rank_top_30": "Classement <br> Top 30",
@@ -113,7 +113,7 @@
         "status_invitation": "Statut : Invitation",
         "in_class": "En cour ...",
         "accepted": "Accepté",
-        "message_invite": "{{name}} vous invite à participer au Grand Quiz des SABI FOOT. 100 000 FCFA à gagner. Releve le défi, cliquez ici {{link}} -> Inscrit toi et challenge avec la communauté. #GrandQuiz",
+        "message_invite": "{{name}} vous invite à participer au Grand Quiz des BIBLE. 100 000 FCFA à gagner. Releve le défi, cliquez ici {{link}} -> Inscrit toi et challenge avec la communauté. #QuizAfrica",
         "link_url": "https://foot.quizzafrica.com/quiz?p={{key_code}}",
         "not_data_found": "Aucune invitation disponible"
     },
@@ -180,7 +180,7 @@
     },
     "popup": {
         "btn_text": "Clique ici pour démarrer!",
-        "full_text": "Pour relever le grand défi SABI FOOT, envoi <b class='color-red4-light'>Quiz</b> par WhasApp au <b class='color-red4-light'>652 49 49 49</b> ou clique sur le bouton suivant 👇👇.",
-        "full_text_wha": "Pour ouvrir votre compte afin de participer au grand défi SABI FOOT, envoi <b class='color-red4-light'>Quiz</b> par WhasApp au <b class='color-red4-light'>652 49 49 49</b> ou clique sur le bouton ci-dessous 👇👇 et nous t'enverrons directement un lien qui te permettra de participer."
+        "full_text": "Pour relever le grand défi BIBLE, envoi <b class='color-red4-light'>Quiz</b> par WhasApp au <b class='color-red4-light'>652 49 49 49</b> ou clique sur le bouton suivant 👇👇.",
+        "full_text_wha": "Pour ouvrir votre compte afin de participer au grand défi BIBLE, envoi <b class='color-red4-light'>Quiz</b> par WhasApp au <b class='color-red4-light'>652 49 49 49</b> ou clique sur le bouton ci-dessous 👇👇 et nous t'enverrons directement un lien qui te permettra de participer."
     }
 }
