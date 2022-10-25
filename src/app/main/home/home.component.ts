@@ -95,9 +95,11 @@ export class HomeComponent implements OnInit {
 
     this.date = this._auth.api.current_week();
 
-    if (!environment.production) {
+    /*if (!environment.production) {
       this.api_url = environment.api_url;
-    }
+    }*/
+
+    this.api_url = environment.api_url;
 
     if (this.current_user) {
       this.my_stat();

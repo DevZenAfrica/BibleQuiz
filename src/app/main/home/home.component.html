@@ -5,7 +5,7 @@
     <div *ngIf="current_user" class="user_status">
       <div class="user text-left">
         <div class="icon"
-          [ngStyle]="{'background-image':(api_url+current_user.avatar?'url('+(current_user.providerId?current_user.avatar:api_url+current_user.avatar)+')':'')}">
+          [ngStyle]="{'background-image':(api_url+current_user.avatar?'url('+(api_url+current_user.avatar)+')':'')}">
           <i class="fa" [ngClass]="!current_user.avatar?'fa-user':''"></i>
         </div>
         <div class="title" [ngStyle]="{'top':(current_user.avatar?'16px':'8px')}">

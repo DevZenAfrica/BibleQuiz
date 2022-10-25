@@ -21,7 +21,7 @@
     </div>
     <div class="profile-right">
       <a (click)="$event.stopPropagation();inputFile.click();">
-        <img [src]="croppedImage||(current_user.avatar?(current_user.providerId?current_user.avatar:api_url+current_user.avatar):'')||'assets/img/profile.jpg'"
+        <img [src]="croppedImage||(current_user.avatar?(api_url+current_user.avatar):'')||'assets/img/profile.jpg'"
              class="preload-image shadow-large">
       </a>
     </div>

@@ -32,8 +32,10 @@ export class ProfileComponent implements OnInit {
   // Nestla nido riche en proteine 300 g
 
   profileForm = this.fb.group({
-    full_name: ['', [Validators.required, Validators.minLength(4)]],
-    player_name: ['', [Validators.required, Validators.minLength(4)]],
+    //full_name: ['', [Validators.required, Validators.minLength(4)]],
+    //player_name: ['', [Validators.required, Validators.minLength(4)]],
+    full_name: ['', [Validators.minLength(4)]],
+    player_name: ['', [Validators.minLength(4)]],
     lang: [this._auth.currentUserValue.lang, [Validators.required]],
     city_id: [null],
     other_city: [null],
@@ -68,9 +70,11 @@ export class ProfileComponent implements OnInit {
     this.setCityValidators();
     this.load_data();
 
-    if (!environment.production) {
+    /*if (!environment.production) {
       this.api_url = environment.api_url;
-    }
+    }*/
+
+    this.api_url = environment.api_url;
 
     this._auth.currentUserSubject.subscribe(() => {
       this.profileForm.get('lang').patchValue(this._auth.api.current_lang_key);
