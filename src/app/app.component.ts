@@ -14,6 +14,13 @@ import {Title} from "@angular/platform-browser";
 import {AuthenticationService} from "./core/_services/authentication.service";
 import {TranslateService} from "@ngx-translate/core";
 
+declare function getMsisdn(): any;
+declare function getCountry(): any;
+declare function getLanguage(): any;
+declare function onLocationChanged(lat, lon): void;
+declare const globalUserName: any;
+declare const avatarUser: any;
+
 declare var $: any;
 
 @Component({
@@ -97,6 +104,17 @@ export class AppComponent implements OnInit {
           this.titleService.setTitle(`${this.title} | ${environment.app_name}`);
         }
       });
+
+    this.implementteAyobaFonction();
+  }
+
+  implementteAyobaFonction() {
+    let tmp : any;
+    if(getMsisdn()) { tmp = getMsisdn(); }
+    if(getCountry()) { tmp = getCountry(); }
+    if(getLanguage()) { tmp = getLanguage(); }
+    if(globalUserName) { tmp = globalUserName; }
+    if(avatarUser) { tmp = avatarUser; }
   }
 
   @HostListener('window:scroll', [])
